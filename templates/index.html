@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection Visualizer</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Bootstrap JS and Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #bf00ff;">
+    <div class="sticky-top" style="margin-left: 30px; margin-right: 30px; margin-top: 30px;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 20px;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html" style="font-size: 40px; font-family: monospace; color: #bf00ff;">Emowave</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 400px;">
+                <ul class="navbar-nav">
+                  <li class="nav-item" style="margin-right: 30px;">
+                    <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/" style="font-family: monospace; color: #bf00ff;">Home</a>
+                  </li>
+                  <li class="nav-item" style="margin-right: 30px;">
+                    <a class="nav-link" href="{{ url_for('about') }}" style="font-family: monospace; color: #bf00ff;">About</a>
+                  </li>
+                  <li class="nav-item" style="margin-right: 30px;">
+                    <a class="nav-link" href="" style="font-family: monospace; color: #bf00ff;">Source-code</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+    <div class="container mt-5">
+        <div class="card" style="border-radius: 15px;">
+            <div class="card-body text-center">
+                <h1 class="card-title" style=" font-weight: bolder; font-family: monospace; color: #bf00ff;" >Emotion Visualizer</h1>
+                <div class="video-container text-center mt-4">
+                    <img id="video" src="{{ url_for('video_feed') }}" alt="Video Feed" class="img-fluid" width="840" height="680">
+                </div>
+                <div class="text-center mt-4">
+                    <p class="lead" style="font-family: monospace; font-weight: bold;">This application detects and visualizes facial emotions in real-time using the live video feed.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3" style="margin-top: 30px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{ url_for('static', filename='emowave.png') }}" class="img-fluid rounded-start" alt="..." style="margin-left: 60px; margin-top: 40px; margin-bottom: 40px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-family: monospace; font-weight: bold; color: #bf00ff; font-size: 50px;">EmoWave</h5>
+                  <p class="card-text" style="font-family: monospace; font-weight: bold;">EmoWave is a cutting-edge emotion Visualizing web application that uses computer vision and deep learning to recognize and visualize human emotions in real-time.
+                    Built with Python, web interface created using Flask, a minimalistic web framework, making EmoWave accessible from any browser. Whether you're interested in human-computer interaction or real-time emotion analysis, EmoWave offers a seamless and intuitive experience for emotion detection.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <footer
+            class="text-center text-lg-start text-dark"
+            style="background-color: whitesmoke; margin-left: -20px; margin-right: -20px; margin-bottom: -20px; margin-top: 20px;"
+            >
+      <!-- Section: Social media -->
+      <section
+               class="d-flex justify-content-between p-4 text-white"
+               style="background-color: white"
+               >
+        <!-- Left -->
+        <div class="me-5" style="color: #bf00ff; font-family: monospace;">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+  
+        <!-- Right -->
+        <div>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold" style="font-family: monospace; font-weight: bold; color: #bf00ff;">EmoWave</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p style="font-family: monospace;">
+                "Unlock the hidden language of emotions, one expression at a time with EmoWave."
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold" style="font-family: monospace; color: #bf00ff; font-weight: bold;">Useful links</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">Home</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">About</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">Github</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">Source-code</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold" style="font-weight: bold; font-family: monospace; color: #bf00ff;">Contact</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p style="font-family: monospace;"><i class="fas fa-home mr-3"></i> Mumbai, 400104, India</p>
+              <p style="font-family: monospace;"><i class="fas fa-envelope mr-3"></i> pranav.v1976@gmail.com</p>
+              <p style="font-family: monospace;"><i class="fas fa-phone mr-3"></i> + 91 9324713139</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+  
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2024 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/"
+           >EmoWave</a
+          >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!-- End of .container -->
+</body>
+</html>

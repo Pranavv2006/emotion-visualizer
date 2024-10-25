@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #bf00ff;">
+  <div class="sticky-top" style="margin-left: 30px; margin-right: 30px; margin-top: 30px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 20px;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" style="font-size: 40px; font-family: monospace; color: #bf00ff;">Emowave</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 400px;">
+            <ul class="navbar-nav">
+              <li class="nav-item" style="margin-right: 30px;">
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/" style="font-family: monospace; color: #bf00ff;">Home</a>
+              </li>
+              <li class="nav-item" style="margin-right: 30px;">
+                <a class="nav-link" href="{{ url_for('about') }}" style="font-family: monospace; color: #bf00ff;">About</a>
+              </li>
+              <li class="nav-item" style="margin-right: 30px;">
+                <a class="nav-link" href="#" style="font-family: monospace; color: #bf00ff;">Source-code</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+  </div>
+  <div class="container mt-5">
+    <div class="card mb-3">
+      <img src="{{ url_for('static', filename='college_name.jpg') }}" class="card-img-top" alt="College Logo">
+      <div class="card-body">
+        <h5 class="card-title" style="font-family: monospace; color: #bf00ff;">Built by the students of Lokmanya Tilak College of Engineering</h5>
+        <p class="card-text" style="font-family: monospace;">The "Emotion Visualizer" is a web application designed by the students of Lokmanya Tilak College of Engineering to detect and visualize human emotions in real-time using facial recognition techniques.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ url_for('static', filename='Python-logo-notext.svg.png') }}" class="card-img-top" alt="Python Logo" style="width: 300px; height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: monospace; color: #bf00ff;">Programmed using Python</h5>
+            <p class="card-text" style="font-family: monospace;">Python has many libraries and frameworks designed specifically for machine learning, such as Flask and PyTorch. These libraries can help speed up development and reduce the need to write repetitive code.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ url_for('static', filename='open-cv.png') }}" class="card-img-top" alt="Python Logo" style="width: 280px; height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: monospace; color: #bf00ff;">Real-time extraction using OpenCV</h5>
+            <p class="card-text" style="font-family: monospace;">developed by Intel, OpenCV is a free cross-platform computer vision library for real-time image processing. OpenCV makes it easy for businesses to utilize and modify the code.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ url_for('static', filename='flask.jpg') }}" class="card-img-top" alt="Python Logo" style="width: 280px; height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: monospace; color: #bf00ff;">Flask for Backend</h5>
+            <p class="card-text" style="font-family: monospace;">Flask is a web application framework written in Python. Flask is based on the Werkzeug WSGI toolkit and Jinja2 template engine.flask provides you with tools, libraries that allow you to build a web application.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ url_for('static', filename='hugging-face.png') }}" class="card-img-top" alt="Python Logo" style="width: 280px; height: 300px;">
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: monospace; color: #bf00ff;">hugging-face for model reference</h5>
+            <p class="card-text" style="font-family: monospace;">Hugging Face provides the tools to create and train ML models for natural language processing (NLP) and other tasks. Users can work collaboratively with other people in the ML ecosystem</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+            class="text-center text-lg-start text-dark"
+            style="background-color: whitesmoke; margin-left: -20px; margin-right: -20px; margin-bottom: -20px; margin-top: 20px;"
+            >
+      <!-- Section: Social media -->
+      <section
+               class="d-flex justify-content-between p-4 text-white"
+               style="background-color: white"
+               >
+        <!-- Left -->
+        <div class="me-5">
+          <span style="color: #bf00ff; font-family: monospace;">Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+  
+        <!-- Right -->
+        <div>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+  
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold" style="font-family: monospace; font-weight: bold; color: #bf00ff;">EmoWave</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p style="font-family: monospace;">
+                "Unlock the hidden language of emotions, one expression at a time with EmoWave."
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold" style="font-family: monospace; color: #bf00ff; font-weight: bold;">Useful links</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">Home</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">About</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">Github</a>
+              </p>
+              <p>
+                <a href="#!" class="text-dark" style="font-family: monospace;">Source-code</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold" style="font-weight: bold; font-family: monospace; color: #bf00ff;">Contact</h6>
+              <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style="width: 60px; background-color: #7c4dff; height: 2px"
+                  />
+              <p style="font-family: monospace;"><i class="fas fa-home mr-3"></i> Mumbai, 400104, India</p>
+              <p style="font-family: monospace;"><i class="fas fa-envelope mr-3"></i> pranav.v1976@gmail.com</p>
+              <p style="font-family: monospace;"><i class="fas fa-phone mr-3"></i> + 91 9324713139</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+  
+      <!-- Copyright -->
+      <div
+           class="text-center p-3"
+           style="background-color: rgba(0, 0, 0, 0.2)"
+           >
+        © 2024 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/"
+           >EmoWave</a
+          >
+      </div>
+      <!-- Copyright -->
+    </footer>
+</body>
+</html>
